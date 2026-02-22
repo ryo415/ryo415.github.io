@@ -1,0 +1,217 @@
+  :root {
+    --bg: #f7f2e9;
+    --bg-soft: #ede3d4;
+    --card: #fffaf2;
+    --text: #1d1a17;
+    --muted: #5b5148;
+    --accent: #d1662f;
+    --accent-2: #275d57;
+    --line: #d8c8b2;
+    --shadow: 0 14px 32px rgba(29, 26, 23, 0.1);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at 10% 12%, rgba(209, 102, 47, 0.18) 0%, transparent 48%),
+      radial-gradient(circle at 92% 82%, rgba(39, 93, 87, 0.16) 0%, transparent 42%),
+      linear-gradient(140deg, var(--bg), var(--bg-soft));
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 2.2rem 0 3.2rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-copy p {
+    max-width: 46ch;
+    color: var(--muted);
+  }
+
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1rem;
+  }
+
+  .chip {
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.87rem;
+    background: rgba(255, 250, 242, 0.66);
+  }
+
+  .portrait {
+    width: min(280px, 100%);
+    justify-self: end;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(155deg, rgba(39, 93, 87, 0.8), rgba(209, 102, 47, 0.82)),
+      #d9a272;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portrait::after {
+    content: "ryo415";
+    position: absolute;
+    right: 1rem;
+    bottom: 0.8rem;
+    color: #fff8ef;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.05rem;
+    box-shadow: var(--shadow);
+  }
+
+  .card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .card p,
+  .card li {
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+
+  .card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .project-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .project {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.75rem;
+    background: rgba(255, 250, 242, 0.75);
+  }
+
+  .project h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: var(--text);
+    background: #fff9ef;
+    font-size: 0.92rem;
+    transition: transform 160ms ease, background 160ms ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    background: #fff3de;
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff9ef;
+  }
+
+  .btn.primary:hover {
+    background: #bc5423;
+  }
+
+  footer {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: up 500ms ease forwards;
+  }
+
+  .delay-1 { animation-delay: 100ms; }
+  .delay-2 { animation-delay: 220ms; }
+  .delay-3 { animation-delay: 340ms; }
+
+  @keyframes up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .portrait {
+      justify-self: start;
+      width: min(230px, 100%);
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
