@@ -1,24 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ryo415</title>
-<meta name="description" content="Simple profile page">
-<meta name="author" content="ryo415">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ryo415 | Portfolio</title>
+  <meta name="description" content="ryo415 の GitHub Pages 用ポートフォリオサイト">
+  <meta name="author" content="ryo415">
+  <meta name="theme-color" content="#efe2d2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>ryo415</h1>
-    <p>Hello, this is my simple profile page.</p>
-    <p>I build web projects and share them on GitHub Pages.</p>
-    <p>
-      GitHub:
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">https://github.com/</a>
-    </p>
-    <p class="muted">Copyright <span id="year"></span> ryo415</p>
-  </main>
-  <script src="script.js"></script>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top">ryo415</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="about/">About</a>
+        <a href="works/">Works</a>
+        <a href="#links">Links</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">GitHub Pages Base Site</p>
+        <h1>自分の活動をまとめるための、静かなベースページ。</h1>
+        <p class="hero-copy">
+          このページは、プロフィール、制作物、外部リンクを少しずつ積み上げていくための出発点です。
+          まずは読みやすく、あとから拡張しやすい構成に整えています。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="works/">Works</a>
+          <a class="button secondary" href="about/">プロフィールを見る</a>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel intro-panel" id="about">
+          <p class="section-label">About</p>
+          <h2>プロフィールの基本情報</h2>
+          <p>
+            Web を中心に、作ったものや試していることを整理して公開していくための個人サイトです。
+            今後ここに、自己紹介、経歴、制作物、連絡先を追加していけます。
+          </p>
+          <p class="panel-link">
+            <a href="about/">about/ ページへ</a>
+          </p>
+        </article>
+
+        <article class="panel" id="focus">
+          <p class="section-label">Works</p>
+          <h2>制作物を整理して載せる場所</h2>
+          <ul class="feature-list">
+            <li>制作物や実験中のプロジェクト一覧</li>
+            <li>技術スタックや公開先の情報</li>
+            <li>今後追加する予定のアーカイブ枠</li>
+          </ul>
+          <p class="panel-link">
+            <a href="works/">works/ ページへ</a>
+          </p>
+        </article>
+
+        <article class="panel wide-panel" id="links">
+          <p class="section-label">Links</p>
+          <h2>外部リンク</h2>
+          <div class="link-list">
+            <a href="https://github.com/ryo415" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <strong>github.com/ryo415</strong>
+            </a>
+            <a href="https://ryo415.github.io" target="_blank" rel="noopener noreferrer">
+              <span>Website</span>
+              <strong>ryo415.github.io</strong>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Copyright <span id="year"></span> ryo415</p>
+      <p>Built as a simple foundation for GitHub Pages.</p>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
